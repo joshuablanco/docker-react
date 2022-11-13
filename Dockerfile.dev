@@ -1,0 +1,18 @@
+FROM node:alpine
+
+# new user because we don't want to run as root due to WSL
+USER node
+
+# create a directory for the app and node has access to it
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+
+# copy with ownership of the directory to node
+COPY --chown=node:node ./package.json ./
+
+RUN npm install
+
+# copy with ownership of the directory to node
+COPY --chown=node:node ./ ./	
+
+CMD ["npm","run","start"]
