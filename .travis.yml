@@ -1,0 +1,19 @@
+sudo: required
+language: generic
+services:
+  - docker
+
+before_install: 
+  - docker build -t joshuablanco/docker-react -f Dockerfile.dev .
+
+script: 
+  - docker run -e CI=true joshuablanco/docker-react npm run test
+
+
+# Decirle a travis
+# - copia de docker corriendo
+# - construccion de imagenes usando Dockerfile.dev
+# - Como correr los tests
+# - desplegar codigo AWS Docker file
+
+

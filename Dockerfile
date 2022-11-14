@@ -1,5 +1,5 @@
 # todo lo que este aca va a ser referenciada como builder phase 
-# Notar que en este punto no importa el volumen porque se necesitaba la modificacion durante la etapa de dev
+# Notar que en este punto no importa el volumen porque se necesitaba la modificacion del codigo durante la etapa de dev, en este caso unicamente 
 
 FROM node:16-alpine as builder
 USER node
